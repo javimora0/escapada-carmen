@@ -92,6 +92,12 @@ answerButtons.forEach(button => {
 
         }
 
+        else if (currentQuestion.id === "question5") {
+
+            showScreen("clue5");
+
+        }
+
     });
 
 });
