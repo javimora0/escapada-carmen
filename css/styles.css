@@ -495,3 +495,23 @@ button:active {
 #question3 {
     text-align: center;
 }
+
+.clue-highlight {
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    color: rgba(255,255,255,0.95);
+}
+
+.clue-small {
+    margin-top: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    color: rgba(255,255,255,0.45);
+}
