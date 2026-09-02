@@ -21,7 +21,12 @@
 
     <div class="stars"></div>
 
-    <main class="welcome">
+
+    <!-- =========================
+         PANTALLA DE BIENVENIDA
+    ========================== -->
+
+    <main class="welcome" id="welcomeScreen">
 
         <div class="welcome-content">
 
@@ -65,11 +70,109 @@
 
     </main>
 
-    <section class="screen" id="gameScreen">
+
+    <!-- =========================
+         PRUEBA 01
+    ========================== -->
+
+    <section class="screen" id="question1">
 
         <div class="game-content">
 
-            <p class="eyebrow">PRUEBA 02</p>
+            <p class="eyebrow">
+                PRUEBA 01
+            </p>
+
+            <h2>
+                Imagina que mañana<br>
+                pudiéramos desaparecer<br>
+                durante 48 horas.
+            </h2>
+
+            <div class="separator"></div>
+
+            <p class="game-intro">
+                ¿Qué te apetecería encontrar<br>
+                al abrir la puerta?
+            </p>
+
+            <div class="answers">
+
+                <button class="answer" data-answer="sea">
+
+                    <span class="answer-icon">🌊</span>
+
+                    <span>
+                        El sonido del mar
+                    </span>
+
+                </button>
+
+                <button class="answer" data-answer="mountain">
+
+                    <span class="answer-icon">🌲</span>
+
+                    <span>
+                        El silencio de la montaña
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PISTA 01
+    ========================== -->
+
+    <section class="screen" id="clue1">
+
+        <div class="game-content clue-content">
+
+            <p class="eyebrow">
+                PISTA DESBLOQUEADA
+            </p>
+
+            <div class="clue-number">
+                48
+            </div>
+
+            <p class="clue-unit">
+                HORAS
+            </p>
+
+            <div class="separator"></div>
+
+            <p class="clue-text">
+                No necesitas mucho tiempo<br>
+                para desconectar de todo.
+            </p>
+
+            <button class="continue-button" data-next="question2">
+                <span>Continuar</span>
+                <strong>→</strong>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRUEBA 02
+    ========================== -->
+
+    <section class="screen" id="question2">
+
+        <div class="game-content">
+
+            <p class="eyebrow">
+                PRUEBA 02
+            </p>
 
             <h2>
                 Ahora imagina<br>
@@ -122,11 +225,18 @@
 
     </section>
 
-    <section class="screen" id="clueScreen">
+
+    <!-- =========================
+         PISTA 02
+    ========================== -->
+
+    <section class="screen" id="clue2">
 
         <div class="game-content clue-content">
 
-            <p class="eyebrow">PISTA DESBLOQUEADA</p>
+            <p class="eyebrow">
+                PISTA DESBLOQUEADA
+            </p>
 
             <div class="clue-number">
                 01
@@ -140,7 +250,7 @@
                 para tenerlo todo.
             </p>
 
-            <button id="continueButton">
+            <button class="continue-button" data-next="question3">
                 <span>Continuar</span>
                 <strong>→</strong>
             </button>
@@ -148,6 +258,30 @@
         </div>
 
     </section>
+
+
+    <!-- =========================
+         PRUEBA 03
+         (TEMPORAL)
+    ========================== -->
+
+    <section class="screen" id="question3">
+
+        <div class="game-content">
+
+            <p class="eyebrow">
+                PRÓXIMAMENTE
+            </p>
+
+            <h2>
+                La aventura<br>
+                continúa...
+            </h2>
+
+        </div>
+
+    </section>
+
 
     <script src="js/app.js"></script>
 

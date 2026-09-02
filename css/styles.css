@@ -443,3 +443,55 @@ button:active {
     }
 
 }
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #08090c;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   BOTONES CONTINUAR
+========================= */
+
+.continue-button {
+    margin-top: 45px;
+}
+
+
+/* =========================
+   PRUEBA 03 TEMPORAL
+========================= */
+
+#question3 {
+    text-align: center;
+}

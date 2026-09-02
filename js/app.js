@@ -1,23 +1,50 @@
-const startButton = document.getElementById("startButton");
-const gameScreen = document.getElementById("gameScreen");
-const clueScreen = document.getElementById("clueScreen");
+// ======================================
+// ELEMENTOS
+// ======================================
 
-const continueButton = document.getElementById("continueButton");
+const welcomeScreen = document.getElementById("welcomeScreen");
+const startButton = document.getElementById("startButton");
 
 
 // ======================================
-// COMENZAR LA AVENTURA
+// MOSTRAR UNA PANTALLA
+// ======================================
+
+function showScreen(screenId) {
+
+    const currentScreen = document.querySelector(".screen.active");
+    const nextScreen = document.getElementById(screenId);
+
+    if (!nextScreen) {
+        console.error("No existe la pantalla:", screenId);
+        return;
+    }
+
+    // Ocultar pantalla actual
+    if (currentScreen) {
+        currentScreen.classList.remove("active");
+    }
+
+    // Mostrar siguiente pantalla
+    setTimeout(() => {
+        nextScreen.classList.add("active");
+    }, 700);
+}
+
+
+// ======================================
+// INICIO
 // ======================================
 
 startButton.addEventListener("click", () => {
 
-    document.querySelector(".welcome").style.opacity = "0";
+    welcomeScreen.style.opacity = "0";
 
     setTimeout(() => {
 
-        document.querySelector(".welcome").style.visibility = "hidden";
+        welcomeScreen.style.visibility = "hidden";
 
-        gameScreen.classList.add("active");
+        showScreen("question1");
 
     }, 700);
 
@@ -25,52 +52,53 @@ startButton.addEventListener("click", () => {
 
 
 // ======================================
-// RESPUESTA
+// RESPUESTAS
 // ======================================
 
-function activateAnswers() {
+const answerButtons = document.querySelectorAll(".answer");
 
-    const answerButtons = document.querySelectorAll(".answer");
+answerButtons.forEach(button => {
 
-    answerButtons.forEach(button => {
+    button.addEventListener("click", () => {
 
-        button.addEventListener("click", () => {
+        const answer = button.dataset.answer;
 
-            const answer = button.dataset.answer;
+        console.log("Respuesta:", answer);
 
-            console.log("Respuesta elegida:", answer);
+        // Saber en qué pregunta estamos
+        const currentQuestion = button.closest(".screen");
 
-            gameScreen.classList.remove("active");
+        if (currentQuestion.id === "question1") {
 
-            setTimeout(() => {
+            showScreen("clue1");
 
-                clueScreen.classList.add("active");
+        }
 
-            }, 700);
+        else if (currentQuestion.id === "question2") {
 
-        });
+            showScreen("clue2");
+
+        }
 
     });
 
-}
-
-
-// Activamos las respuestas
-activateAnswers();
+});
 
 
 // ======================================
-// CONTINUAR
+// BOTONES CONTINUAR
 // ======================================
 
-continueButton.addEventListener("click", () => {
+const continueButtons = document.querySelectorAll(".continue-button");
 
-    clueScreen.classList.remove("active");
+continueButtons.forEach(button => {
 
-    setTimeout(() => {
+    button.addEventListener("click", () => {
 
-        gameScreen.classList.add("active");
+        const nextScreen = button.dataset.next;
 
-    }, 700);
+        showScreen(nextScreen);
+
+    });
 
 });
