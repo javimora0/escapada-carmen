@@ -515,3 +515,85 @@ button:active {
 
     color: rgba(255,255,255,0.45);
 }
+
+/* ======================================
+   REVELACIÓN FINAL
+   ====================================== */
+
+.reveal-screen {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.06),
+            transparent 55%
+        ),
+        #08090c;
+}
+
+.reveal-content {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealAppear 2s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.reveal-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 18vw, 120px);
+    font-weight: 400;
+    letter-spacing: 5px;
+    line-height: 0.9;
+}
+
+.reveal-location {
+    margin-top: 18px;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+}
+
+.reveal-date {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.75);
+}
+
+.reveal-text {
+    margin-top: 45px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.reveal-message {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.55);
+}
+
+.reveal-heart {
+    margin-top: 35px;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+@keyframes revealAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
