@@ -2,7 +2,6 @@ const startButton = document.getElementById("startButton");
 const gameScreen = document.getElementById("gameScreen");
 const clueScreen = document.getElementById("clueScreen");
 
-const answerButtons = document.querySelectorAll(".answer");
 const continueButton = document.getElementById("continueButton");
 
 
@@ -26,28 +25,38 @@ startButton.addEventListener("click", () => {
 
 
 // ======================================
-// RESPUESTA A LA PREGUNTA 1
+// RESPUESTA
 // ======================================
 
-answerButtons.forEach(button => {
+function activateAnswers() {
 
-    button.addEventListener("click", () => {
+    const answerButtons = document.querySelectorAll(".answer");
 
-        const answer = button.dataset.answer;
+    answerButtons.forEach(button => {
 
-        console.log("Respuesta elegida:", answer);
+        button.addEventListener("click", () => {
 
-        gameScreen.classList.remove("active");
+            const answer = button.dataset.answer;
 
-        setTimeout(() => {
+            console.log("Respuesta elegida:", answer);
 
-            clueScreen.classList.add("active");
+            gameScreen.classList.remove("active");
 
-        }, 700);
+            setTimeout(() => {
+
+                clueScreen.classList.add("active");
+
+            }, 700);
+
+        });
 
     });
 
-});
+}
+
+
+// Activamos las respuestas
+activateAnswers();
 
 
 // ======================================
