@@ -262,3 +262,126 @@ button:active {
     }
 
 }
+
+/* =========================
+   PANTALLA DE JUEGO
+========================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #08090c;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.game-content {
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+}
+
+.game-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 11vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+.game-intro {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    color: rgba(255,255,255,0.7);
+
+    margin-bottom: 55px;
+}
+
+.question {
+    animation: fadeIn 1s ease;
+}
+
+.question-text {
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.45);
+
+    margin-bottom: 18px;
+}
+
+.question-title {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answer {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.answer-icon {
+    font-size: 25px;
+}
+
+.answer:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255,255,255,0.08);
+}
