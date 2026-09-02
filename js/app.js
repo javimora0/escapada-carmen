@@ -86,6 +86,12 @@ answerButtons.forEach(button => {
 
         }
 
+        else if (currentQuestion.id === "question4") {
+
+            showScreen("clue4");
+
+        }
+
     });
 
 });
