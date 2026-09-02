@@ -4,18 +4,261 @@
     padding: 0;
 }
 
+html,
 body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
+    width: 100%;
+    min-height: 100%;
 }
 
-#app {
+body {
+    background: #08090c;
+    color: #f5f2ed;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35) 1px, transparent 1px),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle at 35% 75%, rgba(255,255,255,0.25) 1px, transparent 1px),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15) 1px, transparent 1px);
+
+    background-size:
+        170px 170px,
+        230px 230px,
+        280px 280px,
+        190px 190px;
+
+    opacity: 0.35;
+
+    animation: starsMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes starsMove {
+    from {
+        transform: scale(1);
+        opacity: 0.25;
+    }
+
+    to {
+        transform: scale(1.08);
+        opacity: 0.45;
+    }
+}
+
+
+/* =========================
+   PANTALLA PRINCIPAL
+========================= */
+
+.welcome {
+    position: relative;
+
     min-height: 100dvh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+
+    animation: fadeIn 1.8s ease forwards;
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.55);
+
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 14vw, 82px);
+    font-weight: 400;
+
+    line-height: 0.95;
+    letter-spacing: -1px;
+}
+
+h1 span {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+.separator {
+    width: 45px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.4);
+
+    margin: 32px auto;
+}
+
+.subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+    font-style: italic;
+
+    color: rgba(255,255,255,0.75);
+}
+
+
+/* =========================
+   RETO
+========================= */
+
+.challenge {
+    margin-top: 65px;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+    gap: 9px;
+}
+
+.challenge p {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.challenge span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+button {
+    margin-top: 30px;
+
+    width: 100%;
+    max-width: 320px;
+
+    padding: 17px 22px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.04);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+button strong {
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   PEQUEÑA PISTA
+========================= */
+
+.hint {
+    margin-top: 18px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.25);
+}
+
+
+/* =========================
+   ANIMACIÓN ENTRADA
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 480px) {
+
+    .welcome {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    .subtitle {
+        font-size: 23px;
+    }
+
+    .challenge {
+        margin-top: 55px;
+    }
+
 }
